@@ -10,8 +10,90 @@ body{
 #nowPlayingBarContainer {
     width: 100%;
     background-color: #282828;
-    height: 100px; /* remove later */
     bottom: 0;
     position: fixed;
     min-width: 620px;
+}
+
+#nowPlayingBar {
+    display: flex;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight{
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingCenter{
+    width: 40%;
+    /*max-width: 1043.22px; /*700px for 1920x1080 display, 1043.22px for 2560x1440 display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingCenter .content{
+    width: 100%;
+}
+
+.playerControls .buttons{
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton{
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton img{
+    width: 23px;
+    height:23px;
+}
+
+.controlButton.play img,
+.controlButton.pause img{
+    width: 32px;
+    height: 32px;
+}
+
+.progressTime {
+    color: #A0A0A0;
+    font-size: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.progressBar{
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.playbackBar {
+    display: flex;
+}
+
+.progressBarBackground {
+    background-color: #404040;
+    height: 5px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress {
+    background: #A0A0A0;
+    height: 5px;
+    width: 0;
+    border-radius: 2px;
+}
+
+.playbackBar .progressBar{
+    margin-top: 5px;
 }
