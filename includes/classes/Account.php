@@ -4,12 +4,15 @@
         private $errorArray;
         private $con;
 
-        //Account Constructor
+       /*---------------------------------------------------------------------------------------------------
+        Account Constructor takes in:
+            MYSQL_connection = $con
+        This function will construct the Account object
+        -----------------------------------------------------------------------------------------------------*/
         public function __construct($con){
-            //Creates empty array for errorArray
+            //Creates empty array for error handling
             $this->errorArray = array();
 
-            //Sets connection to MYSQL database
             $this->con = $con;
         }
 

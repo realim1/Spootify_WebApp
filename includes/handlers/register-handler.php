@@ -1,4 +1,3 @@
-
 <?php
 
     function cleanupFormUsername($inputText){
@@ -38,7 +37,9 @@
         $isSuccessful = $account->register($username, $firstName, $lastName, $email, $confirmEmail, $password, $confirmPassword);
 
         if($isSuccessful == true){
+            //Create username session variable to be accessed across the rest of the site.
             $_SESSION['userLoggedIn'] = $username;
+
             header("Location: index.php");
         }
     }

@@ -8,6 +8,7 @@
     include("includes/handlers/register-handler.php");
     include("includes/handlers/login-handler.php");
 
+    //Function used to save the fields(except password) when register form is declined.
     function rememberInputValue($inputText){
         if(isset($_POST[$inputText])){
             echo $_POST[$inputText];
@@ -22,14 +23,17 @@
     <title>Register</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icons/logo.png">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/register.js"></script>
 </head>
+
+
 <body>
 
     <?php
-    
+        //IF the register button is pressed("SIGN UP" button) then stay on register info form
         if(isset($_POST['registerButton'])){
             echo '<script>
                     $(document).ready(function(){
@@ -38,6 +42,7 @@
                     });
                  </script>';
         }
+        //ELSE always load with the login info form
         else{
             echo '<script>
                     $(document).ready(function(){
@@ -52,7 +57,7 @@
     <div id="background">
         <div id="loginContainer">
             <div id="inputContainer">
-                <!--Login-->
+                <!-----------------------------LOGIN FORM START----------------------------->
                 <form id="loginForm" action="register.php" method="POST">
                     <h2>Login to your account</h2>
                     <p>
@@ -71,8 +76,9 @@
                     </div>
 
                 </form>
+                <!-----------------------------LOGIN FORM END----------------------------->
 
-                <!--Register-->
+                <!-----------------------------REGISTER FORM START----------------------------->
                 <form id="registerForm" action="register.php" method="POST">
                     <h2>Create your free account</h2>
 
@@ -129,8 +135,9 @@
 
                 </form>
             </div>
+            <!-----------------------------REGISTER FORM END----------------------------->
 
-            <!-- Right Column -->
+            <!-----------------------------RIGHT COLUMN START----------------------------->
             <div id="loginText">
                 <h1> Get great music, right now </h1>
                 <h2> Listen to loads of songs for free </h2>
@@ -141,8 +148,9 @@
                 </ul>
 
             </div>
-
+            <!-----------------------------RIGHT COLUMN END----------------------------->
         </div>
     </div>
+
 </body>
 </html>
